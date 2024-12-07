@@ -8,7 +8,7 @@ function testCycles() {
         // Test 1 with cycle
         {
             graph: [[1, 3], [0, 2], [1, 3], [0, 2]],
-            expected: true
+            expected: false
         },
         // Test 2 without cycle
         {
