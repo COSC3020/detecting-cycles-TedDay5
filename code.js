@@ -9,7 +9,7 @@ function hasCycle(graph) {
         visited[node] = true;
         tracking[node] = true;
         for(const neighbor of graph[node]) {
-            if(!visited[neighbor] {
+            if(!visited[neighbor]) {
                 if(neighbor !== parent && searchCycle(node, neighbor)) {
                     return true;
                 }
