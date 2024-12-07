@@ -5,25 +5,30 @@ eval(fs.readFileSync('code.js')+'');
 
 function testCycles() {
     const testCases = [
-        //Test 1 with cycle
+        // Test 1 with cycle
         {
-            graph: [[1, 2], [0, 2], [0, 1, 3], [2]],
+            graph: [[1, 3], [0, 2], [1, 3], [0, 2]],
             expected: true
         },
-        //Test 2 triangle cycle
-        {
-            graph: [[1, 2], [0, 2], [0, 1]],
-            expected: true
-        },
-        //Test 3 without cycle
-        {
-            graph: [[1], [0, 2], [1, 3], [2]],
-            expected: false
-        },
-        //Test 4 without cycle
+        // Test 2 without cycle
         {
             graph: [[1], [0, 2], [1, 3], [2, 4], [3]],
             expected: false
+        },
+        // Test 3 with cycle
+        {
+            graph: [[1, 2], [0, 3], [0, 3], [1, 2]],
+            expected: true
+        },
+        // Test 4 without cycle
+        {
+            graph: [[1, 2], [0], [0, 3], [2]],
+            expected: false
+        },
+        // Test 5 with cycle
+        {
+            graph: [[1, 2], [0, 2], [0, 1, 3], [2, 4], [3]],
+            expected: true
         }
     ];
 
