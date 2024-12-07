@@ -20,10 +20,10 @@ assert.strictEqual(result, false, 'Test 2 without cycle failed');
 
 // Test 3 with cycle
 graph = [
-    [1, 2],
-    [0, 3],
-    [0, 3],
-    [1, 2]
+    [1],
+    [0, 2],
+    [1, 3],
+    [2, 0]
 ];
 result = hasCycle(graph);
 assert.strictEqual(result, true, 'Test 3: Graph with a cycle failed');
