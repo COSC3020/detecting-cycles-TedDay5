@@ -4,15 +4,13 @@ function hasCycle(graph) {
     let tracking = new Array(n).fill(false);
 
     function searchCycle(parent, node) {
-        if(visited[node]) return false;
         if(tracking[node]) return true;
+        if(visited[node]) return false;
         visited[node] = true;
         tracking[node] = true;
         for(const neighbor of graph[node]) {
-            if(!visited[neighbor]) {
-                if(neighbor !== parent && searchCycle(node, neighbor)) {
-                    return true;
-                }
+            if(neighbor !== parent && searchCycle(node, neighbor)) {
+                return true;
             }
         }
         tracking[node] = false;
