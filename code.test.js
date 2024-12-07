@@ -29,6 +29,7 @@ function testCycles() {
 
     testCases.forEach(({ graph, expected }, index) => {
         const result = hasCycle(graph);
+        console.log(`Test case ${index + 1}: expected ${expected}, got ${result}`);
         assert.strictEqual(result, expected, `Test case ${index + 1} failed`);
     });
 
