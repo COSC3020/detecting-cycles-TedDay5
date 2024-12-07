@@ -9,8 +9,10 @@ function hasCycle(graph) {
         visited[node] = true;
         tracking[node] = true;
         for(const neighbor of graph[node]) {
-            if(neighbor !== parent && searchCycle(node, neighbor)) {
-                return true;
+            if(!visited[neighbor] {
+                if(neighbor !== parent && searchCycle(node, neighbor)) {
+                    return true;
+                }
             }
         }
         tracking[node] = false;
